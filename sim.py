@@ -1,19 +1,21 @@
+from car import *
+
 class Sim():
     def __init__(self):
         self.num_of_cars = 30
-
+        self.road_length = 1000
 
     def create_cars(self, position_list):
         self.cars = [Car(pos) for pos in position_list]
         return self.cars
 
-    def create_starting_positions(self, num_of_cars):
+    def create_starting_positions(self):
         y = 0
         x = 0
         pos_list = []
-        for _ in range(num_of_cars):
+        for _ in range(self.num_of_cars):
             pos_list.append([x,y])
-            x += 1000/num_of_cars
+            x += self.road_length/self.num_of_cars
         return pos_list
 
     def start_cars(self):
@@ -22,7 +24,7 @@ class Sim():
 
     def look_ahead(self):
         for index, obj in enumerate(self.cars):
-            car_index = obj[0]
+            car_index = index
             car1 = self.cars[car_index]
             car2 = self.cars[car_index+1]
             return (car1,car2)
