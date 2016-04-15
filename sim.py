@@ -4,7 +4,8 @@ class Sim():
 
 
     def create_cars(self, position_list):
-        return cars = [Car(pos) for pos in position_list]
+        cars = [Car(pos) for pos in position_list]
+        return cars
 
     def create_starting_positions(self, num_of_cars):
         y = 0
@@ -18,3 +19,6 @@ class Sim():
     def move_cars(self):
         for car in self.num_of_cars:
             car.move_car()
+
+    def sim_start(self):
+        pass
