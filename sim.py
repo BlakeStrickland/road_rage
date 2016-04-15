@@ -10,11 +10,10 @@ class Sim():
         return self.cars
 
     def create_starting_positions(self):
-        y = 0
         x = 0
         pos_list = []
         for _ in range(self.num_of_cars):
-            pos_list.append([x,y])
+            pos_list.append([x])
             x += self.road_length/self.num_of_cars
         return pos_list
 

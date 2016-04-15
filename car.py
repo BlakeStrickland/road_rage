@@ -9,13 +9,11 @@ class Car:
 
     def move_car(self):
         self.position[0] = self.position[0] + self.acceleration_rate
-        self.position += 1
         return self.position
 
     def slow_car(self):
         self.acceleration_rate -= self.slow_down
         self.position[0] += self.acceleration_rate
-        self.position[1] += 1
         self.speed = self.slow_down
         return self.position
 
