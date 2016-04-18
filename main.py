@@ -2,16 +2,16 @@ from sim import *
 
 def main():
     counter = 60
+    simon = Sim()
+    all_positions = []
+    cars = simon.create_cars(simon.create_starting_positions())
     while counter > 0:
-        simon = Sim()
-        cars = simon.create_cars(simon.create_starting_positions())
-        # for car in cars:
-        #     print(car.position)
-
+        for car in cars:
+            all_positions.append(car.position)
         simon.avoid_collision()
         counter -= 1
 
-
+    print(all_positions)
 
 
 
